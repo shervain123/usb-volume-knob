@@ -21,10 +21,13 @@ the sample code used are:
 
 library used in this code (installation is required using library manager in arduino ide):
   HID-Project (https://github.com/NicoHood/HID)
+
+
+if you want to flip the direction of the rotary encoder, just change the outputA and outputB
  */
  
- #define outputA A2
- #define outputB A1
+ #define outputA A1
+ #define outputB A2
  #define inputA A0
  #define r A3
  #include <HID-Project.h>
@@ -177,12 +180,11 @@ library used in this code (installation is required using library manager in ard
       delay(500);
    }
    aLastState = aState;
-  }else{
+  }
     if (Serial.available() > 0) {
     mode = Serial.read(),DEC;
-    Serial.print(mode);
     }
-  }
+  
  }
  
  
